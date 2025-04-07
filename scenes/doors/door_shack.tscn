@@ -1,0 +1,34 @@
+[gd_scene load_steps=6 format=3 uid="uid://cuyvsej8xidoj"]
+
+[ext_resource type="Script" uid="uid://c16gida0j8f8l" path="res://scripts/door_shack.gd" id="1_xhxst"]
+[ext_resource type="PackedScene" uid="uid://ound6fyha38e" path="res://scenes/components/interactable_component.tscn" id="2_kn7ft"]
+[ext_resource type="PackedScene" uid="uid://blysspy4gmnmr" path="res://scenes/components/interactable_label_component.tscn" id="3_58jvf"]
+[ext_resource type="FontFile" uid="uid://duhiqkefsl3ng" path="res://assets/fonts/Pixellari.ttf" id="4_kn7ft"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_1oplh"]
+radius = 13.0
+
+[node name="doorShack" type="Node2D"]
+script = ExtResource("1_xhxst")
+
+[node name="InteractableComponent" parent="." instance=ExtResource("2_kn7ft")]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="InteractableComponent"]
+shape = SubResource("CircleShape2D_1oplh")
+
+[node name="InteractableLabelComponent" parent="." instance=ExtResource("3_58jvf")]
+
+[node name="Timer" type="Timer" parent="."]
+wait_time = 3.0
+one_shot = true
+
+[node name="Label" type="Label" parent="."]
+offset_left = -24.0
+offset_top = -29.0
+offset_right = 25.0
+offset_bottom = -6.0
+theme_override_fonts/font = ExtResource("4_kn7ft")
+theme_override_font_sizes/font_size = 16
+text = "Locked"
+
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

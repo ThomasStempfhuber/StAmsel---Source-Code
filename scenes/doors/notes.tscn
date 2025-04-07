@@ -1,0 +1,41 @@
+[gd_scene load_steps=6 format=3 uid="uid://cv1yn7ec48ym5"]
+
+[ext_resource type="Script" uid="uid://cqpllur1c1xg4" path="res://scripts/notes.gd" id="1_d35ir"]
+[ext_resource type="PackedScene" uid="uid://ound6fyha38e" path="res://scenes/components/interactable_component.tscn" id="1_ecxfq"]
+[ext_resource type="PackedScene" uid="uid://blysspy4gmnmr" path="res://scenes/components/interactable_label_component.tscn" id="2_0fsk4"]
+[ext_resource type="FontFile" uid="uid://duhiqkefsl3ng" path="res://assets/fonts/Pixellari.ttf" id="3_0fsk4"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_d35ir"]
+radius = 22.0
+
+[node name="Notes" type="Node2D"]
+script = ExtResource("1_d35ir")
+
+[node name="InteractableComponent" parent="." instance=ExtResource("1_ecxfq")]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="InteractableComponent"]
+shape = SubResource("CircleShape2D_d35ir")
+
+[node name="InteractableLabelComponent" parent="." instance=ExtResource("2_0fsk4")]
+offset_left = -10.0
+offset_top = 38.0
+offset_right = -10.0
+offset_bottom = 38.0
+
+[node name="RichTextLabel" type="RichTextLabel" parent="."]
+offset_left = -92.0
+offset_top = -73.0
+offset_right = 389.0
+offset_bottom = 202.0
+scale = Vector2(0.405712, 0.478055)
+theme_override_fonts/normal_font = ExtResource("3_0fsk4")
+theme_override_font_sizes/normal_font_size = 16
+text = "The latest note reads:
+
+\"I went deeper today. The pressure is worse now, but it no longer frightens me. I know what I’m looking for. I know what waits.
+It took years to understand what the old records meant. The shape, the material, the depth. Not just lost — buried. Sleeping.
+But I’ve seen it now. Touched it. It’s ready.
+The clapper is complete. When the bell rings, it will know. The sound will carry — through water, through stone, through us.
+And from the depths, it will answer.\"
+
+You also find the key to the bell tower here."

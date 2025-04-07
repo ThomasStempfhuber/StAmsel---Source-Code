@@ -1,0 +1,64 @@
+[gd_scene load_steps=11 format=3 uid="uid://cgvc67bjbmkcx"]
+
+[ext_resource type="Script" uid="uid://ijbnqa404n7y" path="res://scripts/NPCs/farmer.gd" id="1_5r2a4"]
+[ext_resource type="PackedScene" uid="uid://ound6fyha38e" path="res://scenes/components/interactable_component.tscn" id="2_gaa2p"]
+[ext_resource type="PackedScene" uid="uid://blysspy4gmnmr" path="res://scenes/components/interactable_label_component.tscn" id="3_0u7vr"]
+[ext_resource type="Texture2D" uid="uid://dhurq3675xykr" path="res://assets/art/characters/NPCs.png" id="4_gaa2p"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_frmmj"]
+radius = 39.0512
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_0u7vr"]
+atlas = ExtResource("4_gaa2p")
+region = Rect2(0, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_frmmj"]
+atlas = ExtResource("4_gaa2p")
+region = Rect2(0, 64, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_r4nmw"]
+atlas = ExtResource("4_gaa2p")
+region = Rect2(0, 128, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_v3r2b"]
+atlas = ExtResource("4_gaa2p")
+region = Rect2(0, 192, 64, 64)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_5vlgr"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_0u7vr")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_frmmj")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_r4nmw")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_v3r2b")
+}],
+"loop": true,
+"name": &"default",
+"speed": 3.0
+}]
+
+[node name="Farmer" type="Node2D"]
+script = ExtResource("1_5r2a4")
+
+[node name="InteractableComponent" parent="." instance=ExtResource("2_gaa2p")]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="InteractableComponent"]
+shape = SubResource("CircleShape2D_frmmj")
+
+[node name="InteractableLabelComponent" parent="." instance=ExtResource("3_0u7vr")]
+offset_left = 15.0
+offset_top = -22.0
+offset_right = 15.0
+offset_bottom = -22.0
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+position = Vector2(0, -8)
+sprite_frames = SubResource("SpriteFrames_5vlgr")
+autoplay = "default"

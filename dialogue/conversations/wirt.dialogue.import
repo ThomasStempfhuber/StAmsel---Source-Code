@@ -1,0 +1,15 @@
+[remap]
+
+importer="dialogue_manager_compiler_14"
+type="Resource"
+uid="uid://626xeu20xq3n"
+path="res://.godot/imported/wirt.dialogue-452502554d9249d951c2252dbabdd181.tres"
+
+[deps]
+
+source_file="res://dialogue/conversations/wirt.dialogue"
+dest_files=["res://.godot/imported/wirt.dialogue-452502554d9249d951c2252dbabdd181.tres"]
+
+[params]
+
+defaults=true

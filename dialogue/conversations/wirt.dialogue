@@ -1,0 +1,21 @@
+~ start
+Matthias Gruber: Afternoon. You must be the guest from out of town.
+Matthias Gruber: Room’s ready. Back corner. Nice and quiet. 
+=> questions1
+
+~ questions1
+- Is the lake close by?
+	Matthias Gruber: Just a short walk east. Can’t miss it. Water’s still most days. Like a pane of glass. => questions1
+- I heard there's a festival tomorrow.
+	Matthias Gruber: It’s the Patrozinium. Mass at dawn. Bell rings at sunrise. Folks usually end up here after — lunch, a drink, bit of talk. => questions1
+- I heard there’s a new bell? [if Global.note_bell == true]
+	set Global.note_clapper = true
+	Matthias Gruber: The bell’s been there forever. Just polished it up. The clapper, though — that’s new. Pfarrer found it somewhere. => questions1
+- What's up with the shack by the lake? [if Global.tried_shack == true]
+	set Global.note_diving = true
+	Matthias Gruber: Belongs to the church and contains the Pfarrers diving gear. 
+	Matthias Gruber: If you’re curious, talk to Bastian — he cuts wood for the town. You'll probably find him near the Bruchsee. => questions1
+- Thanks, that’s all for now.
+	set Global.in_dialogue = false 
+	=> END
+	

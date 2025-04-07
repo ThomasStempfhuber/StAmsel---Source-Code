@@ -1,0 +1,38 @@
+[gd_scene load_steps=6 format=3 uid="uid://n8tg7adw6rx7"]
+
+[ext_resource type="Script" uid="uid://g14s7nqrbqt3" path="res://scripts/room.gd" id="1_ax7nd"]
+[ext_resource type="FontFile" uid="uid://duhiqkefsl3ng" path="res://assets/fonts/Pixellari.ttf" id="2_mjuai"]
+[ext_resource type="PackedScene" uid="uid://ound6fyha38e" path="res://scenes/components/interactable_component.tscn" id="2_roku3"]
+[ext_resource type="PackedScene" uid="uid://blysspy4gmnmr" path="res://scenes/components/interactable_label_component.tscn" id="3_mjuai"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_2x5kj"]
+radius = 23.3452
+
+[node name="Room" type="Node2D"]
+script = ExtResource("1_ax7nd")
+
+[node name="Label" type="Label" parent="."]
+offset_left = 3.0
+offset_top = -59.0
+offset_right = 103.0
+theme_override_fonts/font = ExtResource("2_mjuai")
+theme_override_font_sizes/font_size = 16
+text = "It is too early 
+to go to sleep"
+
+[node name="Timer" type="Timer" parent="."]
+wait_time = 3.0
+one_shot = true
+
+[node name="InteractableComponent" parent="." instance=ExtResource("2_roku3")]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="InteractableComponent"]
+shape = SubResource("CircleShape2D_2x5kj")
+
+[node name="InteractableLabelComponent" parent="." instance=ExtResource("3_mjuai")]
+offset_left = -25.0
+offset_top = -46.0
+offset_right = -25.0
+offset_bottom = -46.0
+
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
