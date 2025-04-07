@@ -12,31 +12,6 @@
 
 ## 🎮 About the Game
 
-_A short paragraph introducing your game. What's it about? What's the core mechanic? What's the theme of Ludum Dare 57 and how did your game interpret it?_
-
-Example:
-
-> **Flickerbound** is a fast-paced 2D pixel-art platformer made in 48 hours for **Ludum Dare 57**. Based on the theme "Shifting Realities", you play as a lost spark navigating between dimensions in a collapsing neon city.
 
 ---
 
-## 📸 Screenshots / GIFs
-
-_Include animated GIFs or screenshots to show off gameplay._
-
-![Gameplay Screenshot](./screenshots/screenshot1.png)
-![GIF Preview](./screenshots/preview.gif)
-
----
-
-## 🚀 How to Play
-
-### 🔧 Requirements
-- Godot 4.x (for source)
-- HTML5-capable browser (for web version)
-
-### 🖥️ Run Locally
-```bash
-git clone https://github.com/yourname/yourgame.git
-cd yourgame
-godot .
