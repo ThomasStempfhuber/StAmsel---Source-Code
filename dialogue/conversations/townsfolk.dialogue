@@ -1,0 +1,30 @@
+~ start
+Elias Brenner: Here for the festival, eh. => questions1
+
+~ questions1
+- It is a church festival, right?
+	Elias Brenner: The Saint’s day. Bell rings at dawn at the end of the morning mass. => questions1
+- Do you go to the mass?
+	Elias Brenner: I stand at the back. Always have. Doesn’t feel right not to. => questions1
+- Why is the church locked? [if Global.tried_church == true]
+	Elias Brenner: Only opens for the mass. That’s how it’s always been. => questions1
+- What’s the Pfarrer like? [if Global.note_pfarrer == true]
+	Elias Brenner: Good man. Keeps to himself more these days. He goes into the lake now and then. No one asks why. => questionsLake
+- Alright. Take care.
+	set Global.in_dialogue = false 
+	=> END
+
+
+~ questionsLake
+- He goes into the lake?
+	set Global.note_diving = true
+	Elias Brenner: He is diving most Sundays. Has for years. => questionsDiving
+
+~ questionsDiving
+- What’s he looking for down there?
+	Elias Brenner: Don’t know. Don’t ask. Whatever it is, I think he finally found it. => questionsDiving
+- Is he diving alone?
+	set Global.note_diving_helper = true
+	Elias Brenner: Bastian helps him. Watches the air. But once he’s under? It’s just him and the lake.
+	set Global.in_dialogue = false
+	=> END

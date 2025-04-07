@@ -1,0 +1,15 @@
+[remap]
+
+importer="dialogue_manager_compiler_14"
+type="Resource"
+uid="uid://cuac8x0nfp1ch"
+path="res://.godot/imported/woodcutter.dialogue-bb60248f474b2245ba3bd55e80e97dfc.tres"
+
+[deps]
+
+source_file="res://dialogue/conversations/woodcutter.dialogue"
+dest_files=["res://.godot/imported/woodcutter.dialogue-bb60248f474b2245ba3bd55e80e97dfc.tres"]
+
+[params]
+
+defaults=true

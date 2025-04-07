@@ -1,0 +1,29 @@
+[gd_scene load_steps=4 format=3 uid="uid://blysspy4gmnmr"]
+
+[ext_resource type="Texture2D" uid="uid://c8s7kg0w6xdys" path="res://assets/art/ui/ui.png" id="1_am6vt"]
+[ext_resource type="FontFile" uid="uid://duhiqkefsl3ng" path="res://assets/fonts/Pixellari.ttf" id="2_kjian"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_17df2"]
+atlas = ExtResource("1_am6vt")
+region = Rect2(32, 0, 16, 16)
+
+[node name="InteractableLabelComponent" type="Control"]
+layout_mode = 3
+anchors_preset = 0
+
+[node name="TextureRect" type="TextureRect" parent="."]
+layout_mode = 0
+offset_right = 20.0
+offset_bottom = 20.0
+texture = SubResource("AtlasTexture_17df2")
+
+[node name="Label" type="Label" parent="."]
+layout_mode = 0
+offset_top = 2.0
+offset_right = 20.0
+offset_bottom = 22.0
+theme_override_fonts/font = ExtResource("2_kjian")
+theme_override_font_sizes/font_size = 16
+text = "E"
+horizontal_alignment = 1
+vertical_alignment = 1

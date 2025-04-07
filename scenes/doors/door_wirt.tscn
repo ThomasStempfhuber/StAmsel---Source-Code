@@ -1,0 +1,34 @@
+[gd_scene load_steps=6 format=3 uid="uid://dc4u10yb88bqr"]
+
+[ext_resource type="Script" uid="uid://bswufejml7ofg" path="res://scripts/door_wirt.gd" id="1_3q6s8"]
+[ext_resource type="PackedScene" uid="uid://ound6fyha38e" path="res://scenes/components/interactable_component.tscn" id="2_v1toh"]
+[ext_resource type="PackedScene" uid="uid://blysspy4gmnmr" path="res://scenes/components/interactable_label_component.tscn" id="3_v1toh"]
+[ext_resource type="FontFile" uid="uid://duhiqkefsl3ng" path="res://assets/fonts/Pixellari.ttf" id="4_lioit"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_lioit"]
+radius = 16.0
+
+[node name="doorWirt" type="Node2D"]
+script = ExtResource("1_3q6s8")
+
+[node name="InteractableComponent" parent="." instance=ExtResource("2_v1toh")]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="InteractableComponent"]
+shape = SubResource("CircleShape2D_lioit")
+
+[node name="InteractableLabelComponent" parent="." instance=ExtResource("3_v1toh")]
+
+[node name="Label" type="Label" parent="."]
+offset_left = -77.0
+offset_top = -34.0
+offset_right = 83.0
+offset_bottom = -11.0
+theme_override_fonts/font = ExtResource("4_lioit")
+theme_override_font_sizes/font_size = 16
+text = "I have something to do"
+
+[node name="Timer" type="Timer" parent="."]
+wait_time = 3.0
+autostart = true
+
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

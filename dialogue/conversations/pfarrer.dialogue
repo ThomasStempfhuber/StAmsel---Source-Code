@@ -1,0 +1,16 @@
+~ start
+set Global.note_pfarrer = true 
+Johann Bruckner: Ah a visitor — you’ve arrived just in time for the Patrozinium. Be sure to attend the morning mass — it’s an important year.
+=> questions1
+
+~ questions1
+- Why is this year different?
+	set Global.note_bell = true
+	Johann Bruckner: Some years carry more weight than others. The bell will ring clearer than it has in generations. => questions1
+- Is the bell different than before? [if Global.note_bell == true]
+	Johann Bruckner: You’ll hear for yourself soon enough. => questions1
+- I heard you go diving in the lake? [if Global.note_diving == true]
+	Johann Bruckner: From time to time. Some things lie beneath that cannot be left forgotten. => questions1
+- That’s all for now.
+	set Global.in_dialogue = false 
+	=> END

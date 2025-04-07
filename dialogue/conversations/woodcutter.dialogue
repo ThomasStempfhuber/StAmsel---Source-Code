@@ -1,0 +1,56 @@
+~ start
+Bastian Roth: You’re the one staying at the inn, yeah? Figured. Most visitors end up walking the lake path sooner or later.
+Bastian Roth: It’s a nice view, sure — just don’t go swimming in it.
+=> questions1
+
+~ questions1
+- You cut wood for the village?
+	Bastian Roth: Firewood, mostly. Matthias needs a lot this time of year. => questions1
+- Why shouldn’t you swim in the lake?
+	Bastian Roth: Looks calm, but there’s pull underneath. You don’t feel it ‘til it’s too late. No one really knows how deep the Bruchsee goes. Folks around here stay out of it.
+	Bastian Roth: Well... most do. => questions2
+- Are going to the morning mass tomorrow?
+	Bastian Roth: Wouldn’t miss it. Whole village will be there. => questions1
+- What is in that locked shack? [if Global.tried_shack == true]
+	Bastian Roth: Only old diving gear. => questions1
+- The pfarrer mentioned a new bell. [if Global.note_diving_helper == true]
+	Bastian Roth: Bell’s not new. Just cleaned up. The clapper’s what’s new. => questions1
+- I heard the Pfarrer goes diving in the lake [if Global.note_diving == true]
+	Bastian Roth: Every week. => questions1
+- You help the Pfarrer dive? [if Global.note_diving_helper == true]
+	Bastian Roth: ... I handle the gear. Air line, pressure, that sort of thing. 
+	Bastian Roth: He goes down alone. Doesn’t say much about what he’s looking for. => questionsDiving
+- Take care.
+	set Global.in_dialogue = false 
+	=> END
+
+~ questions2
+- Most?
+	Bastian Roth: Doesn’t matter. You’re not planning to go in, are you? => questions1
+
+~ questionsDiving
+- And you are not asking why he ?
+	Bastian Roth: Not my place to ask. He’s the Pfarrer. => questionsDiving
+- How deep does he go?
+	Bastian Roth: Deeper than I’d be comfortable with. Sometimes I don’t hear a thing for ten, fifteen minutes. => questionsDiving
+- Do you see what he brings up?
+	Bastian Roth: Most times, nothing.
+	Bastian Roth: But he came back one Sunday with something. Didn’t show it. Just went straight to the church. => questionsClapper
+
+~ questionsClapper
+- Hmm, can I see the diving gear? 
+	Bastian Roth: No. Pfarrer doesn’t let anyone else in the shack. Not since he started going deeper. => questionsGear
+
+~ questionsGear
+- It’s not just curiosity. Something’s off.
+	do Global.start_Dusk()
+	Bastian Roth: You’re not the first to notice ... I’ll leave the shack open tonight.
+	set Global.in_dialogue = false 
+	=> END
+
+#var note_pfarrer  = false
+#var note_bell  = false
+#var note_clapper = false
+#var note_diving = true
+#var note_woodcutter = false
+#var note_lake  = false

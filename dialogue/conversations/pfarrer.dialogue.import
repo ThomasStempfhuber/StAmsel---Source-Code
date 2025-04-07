@@ -1,0 +1,15 @@
+[remap]
+
+importer="dialogue_manager_compiler_14"
+type="Resource"
+uid="uid://dbuxbnotxxr08"
+path="res://.godot/imported/pfarrer.dialogue-68dfaabd2c757b09d9aa94b3cccd3b9f.tres"
+
+[deps]
+
+source_file="res://dialogue/conversations/pfarrer.dialogue"
+dest_files=["res://.godot/imported/pfarrer.dialogue-68dfaabd2c757b09d9aa94b3cccd3b9f.tres"]
+
+[params]
+
+defaults=true

@@ -1,0 +1,15 @@
+~ start
+Helga Kober: Ah, you’re the visitor! I was wondering when we’d cross paths. => questions1
+
+
+~ questions1
+- I heared there’s a lake nearby?
+	Helga Kober: Ah, the Bruchsee — it’s just east of here, past the trees.
+	Helga Kober: Deep and clear, even when the rest of the valley’s still frozen it remains unchanged. Some say it doesn’t have a bottom. => questions1
+- There’s a festival tomorrow?
+	Helga Kober: We gather at the church before sunrise, then head to the Wirtshaus afterwards. => questions1
+- Why is the church locked? [if Global.tried_church == true]
+	Helga Kober: Only opens for the Saint’s service. => questions1
+- Alright then. Take care. 
+	set Global.in_dialogue = false 
+	=> END
